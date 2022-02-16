@@ -1,8 +1,25 @@
+import { Fragment, useState } from "react";
+import Header from "./components/Layout/Header";
+import Meals from "./components/Meals/Meals";
+import Cart from "./components/Cart/Cart";
+
 function App() {
+  const [isOpen, setIsOpen] = useState("false");
+
+  const isOpenHandler = () => {
+    if (!isOpen) {
+      setIsOpen(true);
+    }
+  };
+
   return (
-    <div>
-      <h2>Let's get started!</h2>
-    </div>
+    <Fragment>
+      <Cart isOpen={isOpenHandler} />
+      <Header />
+      <main>
+        <Meals />
+      </main>
+    </Fragment>
   );
 }
 
