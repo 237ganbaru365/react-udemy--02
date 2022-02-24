@@ -16,6 +16,7 @@ const MealItemForm = (props) => {
     const enteredAmountNumber = +enteredAmount;
 
     if (
+      //trim()はwhitespaceなどを削除して正確に文字数だけをチェックしている
       enteredAmount.trim().length === 0 ||
       enteredAmountNumber < 1 ||
       enteredAmountNumber > 5
